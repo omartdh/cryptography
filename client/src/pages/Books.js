@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import CoinList from "../components/CoinList";
+import NewsLines from "../components/NewsLines";
 
 function Books() {
   // Setting our component's initial state
@@ -61,6 +63,7 @@ function Books() {
             <Jumbotron>
               <h1> Crypto Prices</h1>
               </Jumbotron>
+              <CoinList />
           </Col>
           <Col size="md-6">
             <Jumbotron>
@@ -118,6 +121,7 @@ function Books() {
             <Jumbotron>
               <h1>Crypto News</h1>
             </Jumbotron>
+            <NewsLines />
           </Col>
         </Row>
       </Container>
