@@ -1,6 +1,20 @@
 import axios from "axios";
 
 export default {
+
+// getprices: function() {
+//   // token = "5d0bdc15-50d5-4ca0-853d-1a63ca90efaa"
+
+// return axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', {
+//  headers: {
+//    'X-CMC_PRO_API_KEY': "5d0bdc15-50d5-4ca0-853d-1a63ca90efaa", 
+//  } //the token is a variable which holds the token
+//  }).then(function(req)  {
+//   //  console.log(req);
+//  console.log(req.data.data[0].quote.USD.price);
+// })
+
+// }
   // Gets all books
   getBooks: function() {
     return axios.get("/api/books");

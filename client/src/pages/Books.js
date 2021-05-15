@@ -57,7 +57,12 @@ function Books() {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
+          <Col size="md-3">
+            <Jumbotron>
+              <h1> Crypto Prices</h1>
+              </Jumbotron>
+          </Col>
+          <Col size="md-3">
             <Jumbotron>
               <h1>What Books Should I Read?</h1>
             </Jumbotron>
@@ -85,7 +90,7 @@ function Books() {
               </FormBtn>
             </form>
           </Col>
-          <Col size="md-6 sm-12">
+          <Col size="md-3">
             <Jumbotron>
               <h1>Books On My List</h1>
             </Jumbotron>
@@ -105,6 +110,11 @@ function Books() {
             ) : (
               <h3>No Results to Display</h3>
             )}
+          </Col>
+          <Col size="md-3">
+            <Jumbotron>
+              <h1>Crypto News</h1>
+            </Jumbotron>
           </Col>
         </Row>
       </Container>
