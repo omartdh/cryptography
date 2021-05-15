@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import CoinList from "../components/CoinList";
+import NewsLines from "../components/NewsLines";
 
 function Books() {
   // Setting our component's initial state
@@ -57,25 +59,34 @@ function Books() {
     return (
       <Container fluid>
         <Row>
+          <Col size="md-3">
+            <Jumbotron>
+              <h1> Crypto Prices</h1>
+              </Jumbotron>
+              <CoinList />
+          </Col>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              <h1>My Wallet</h1>
             </Jumbotron>
+            <Row>
+              <Col size="md-6">
+              <h2>Add New Crypto</h2>
             <form>
               <Input
                 onChange={handleInputChange}
                 name="title"
-                placeholder="Title (required)"
+                placeholder="Currency Name (required)"
               />
               <Input
                 onChange={handleInputChange}
                 name="author"
-                placeholder="Author (required)"
+                placeholder="Amount holding (required)"
               />
               <TextArea
                 onChange={handleInputChange}
                 name="synopsis"
-                placeholder="Synopsis (Optional)"
+                placeholder="Notes (Optional)"
               />
               <FormBtn
                 disabled={!(formObject.author && formObject.title)}
@@ -84,18 +95,16 @@ function Books() {
                 Submit Book
               </FormBtn>
             </form>
-          </Col>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Books On My List</h1>
-            </Jumbotron>
-            {books.length ? (
+            </Col>
+            <Col size="md-6">
+              <h2>My Coins</h2>
+              {books.length ? (
               <List>
                 {books.map(book => (
                   <ListItem key={book._id}>
                     <Link to={"/books/" + book._id}>
                       <strong>
-                        {book.title} by {book.author}
+                        {book.title}: {book.author}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => deleteBook(book._id)} />
@@ -105,6 +114,14 @@ function Books() {
             ) : (
               <h3>No Results to Display</h3>
             )}
+            </Col>
+            </Row>
+          </Col>
+          <Col size="md-3">
+            <Jumbotron>
+              <h1>Crypto News</h1>
+            </Jumbotron>
+            <NewsLines />
           </Col>
         </Row>
       </Container>
