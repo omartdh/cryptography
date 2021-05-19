@@ -1,8 +1,8 @@
 .footer {
     min-height: 8%;
-    background: #E5E5E5;
+    /* background: #E5E5E5; */
     /* position: relative; */
-    border-top: 1px solid #ccc;
+    /* border-top: 1px solid #ccc; */
     display: flex;
     justify-content: center;
     padding: 1%;
@@ -15,6 +15,7 @@
     font-family: Bebas Neue;
     text-align: center;
     /* height: 18%; */
+    color: white;
   }
   
   .footer span {
@@ -23,5 +24,5 @@
     left: 0;
     right: 0;
     padding: 3px;
-    background: #B8B8B8;
+    /* background: #B8B8B8; */
   }
