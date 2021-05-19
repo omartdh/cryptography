@@ -10,10 +10,7 @@ class SearchResultContainer extends Component {
   headline1 = "";
   
   componentDidMount() {
-   this.searchNews("crypto");
-    // await console.log(this.state.results[0].title)
-    //  this.headline1 = this.state.results[0].title
-     
+   this.searchNews("crypto");     
   }
 
   searchNews = query => {
@@ -48,7 +45,11 @@ class SearchResultContainer extends Component {
       <div>
         <div>
           <ul>
-          {this.state.results.map( res => <li>{res.title}</li>)}
+          {this.state.results.map( (res, index) => 
+          <li key={index}><a href={res.url} target="_blank">{res.title}</a></li>
+      
+          
+          )}
           </ul>
         </div>
         {/* <SearchForm
