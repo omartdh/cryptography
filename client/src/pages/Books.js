@@ -91,7 +91,7 @@ function Books() {
           </Col>
           <Col size="md-6">
             <Jumbotron>
-              <h1>My Wallet</h1>
+              <h1>My Crypto</h1>
             </Jumbotron>
             <Row>
               <Col size="md-6">

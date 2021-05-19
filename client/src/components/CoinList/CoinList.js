@@ -6,7 +6,7 @@ const CoinList = (props) => {
   return(
     
     <div class="list-group">
-    {props.coins.map( res => <a className="list-group-item list-group-item-action" href="#"><img src={res.image}/> {res.name} ${res.current_price}</a>)}
+    {props.coins.map( res => <a className="card card body list-group-item list-group-item-action" href="#"><img src={res.image}/> {res.name} ${res.current_price}</a>)}
   </div>
   )
 }

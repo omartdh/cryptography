@@ -7,7 +7,7 @@ function Nav() {
     className="navbar navbar-dark bg">
       <a style={{fontSize: 40, color: "white"}}
          href="/">
-        Crtyptography
+        Cryptography
       </a>
     </nav>
   );
