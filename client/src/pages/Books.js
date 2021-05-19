@@ -5,20 +5,41 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
-import CoinList from "../components/CoinList";
+import { Input, InputList, TextArea, FormBtn } from "../components/Form";
+import CoinList from "../components/CoinList/CoinList";
 import NewsLines from "../components/NewsLines";
+import Api from "../utils/Api1";
 
 function Books() {
   // Setting our component's initial state
   const [books, setBooks] = useState([])
   const [formObject, setFormObject] = useState({})
-
+  const [results, setResults] = useState([])
   // Load all books and store them with setBooks
+  
+  const fetchData = async () => {
+    const response = await Api.get("/coins/markets/", {
+      params: {
+        vs_currency: "usd",
+        ids: "bitcoin, ethereum, dogecoin, cardano, ripple, litecoin, bitcoin-cash, binancecoin, ethereum-classic, "
+      },
+    });
+    setResults(response.data)
+    
+  };
+  
   useEffect(() => {
     loadBooks()
+    fetchData();
   }, [])
 
+  
+
+  // useEffect(() => {
+
+  
+  // },[]);
+  console.log(results, "from results")
   // Loads all books and sets them to books
   function loadBooks() {
     API.getBooks()
@@ -55,6 +76,8 @@ function Books() {
         .catch(err => console.log(err));
     }
   };
+  
+
 
     return (
       <Container fluid>
@@ -63,7 +86,8 @@ function Books() {
             <Jumbotron>
               <h1> Crypto Prices</h1>
               </Jumbotron>
-              <CoinList />
+              <CoinList 
+              coins = {results} />
           </Col>
           <Col size="md-6">
             <Jumbotron>
@@ -73,10 +97,10 @@ function Books() {
               <Col size="md-6">
               <h2>Add New Crypto</h2>
             <form>
-              <Input
-                onChange={handleInputChange}
-                name="title"
-                placeholder="Currency Name (required)"
+              <InputList
+                coins = {results}
+                onChange= {handleInputChange}
+                name="Select Crypto"
               />
               <Input
                 onChange={handleInputChange}
