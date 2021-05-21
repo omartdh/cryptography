@@ -3,21 +3,21 @@ import axios from "axios";
 
 export default {
 
-  // Gets all books
-  getBooks: function() {
-    return axios.get("/api/books");
+  // Gets all 
+  getCryptos: function() {
+    return axios.get("/api/cryptos");
   },
-  // Gets the book with the given id
-  getBook: function(id) {
-    return axios.get("/api/books/" + id);
+  // Gets the crypto with the given id
+  getCrypto: function(id) {
+    return axios.get("/api/cryptos/" + id);
   },
-  // Deletes the book with the given id
-  deleteBook: function(id) {
-    return axios.delete("/api/books/" + id);
+  // Deletes the crypto with the given id
+  deleteCrypto: function(id) {
+    return axios.delete("/api/cryptos/" + id);
   },
-  // Saves a book to the database
-  saveBook: function(bookData) {
-    return axios.post("/api/books", bookData);
+  // Saves a crypto to the database
+  saveCrypto: function(cryptoData) {
+    return axios.post("/api/cryptos", cryptoData);
   }
 };
 

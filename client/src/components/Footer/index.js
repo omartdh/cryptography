@@ -4,7 +4,7 @@ import "./style.css";
 function Footer() {
   return (
     <footer className="footer">
-      <span>CRYPTO</span>
+      <span>@CRYPTOGRAPY</span>
     </footer>
   );
 }

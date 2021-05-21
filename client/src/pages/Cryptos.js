@@ -10,12 +10,12 @@ import CoinList from "../components/CoinList/CoinList";
 import NewsLines from "../components/NewsLines";
 import Api from "../utils/Api1";
 
-function Books() {
+function Cryptos() {
   // Setting our component's initial state
-  const [books, setBooks] = useState([])
+  const [cryptos, setCryptos] = useState([])
   const [formObject, setFormObject] = useState({})
   const [results, setResults] = useState([])
-  // Load all books and store them with setBooks
+  // Load all cryptos and store them with setCryptos
   
   const fetchData = async () => {
     const response = await Api.get("/coins/markets/", {
@@ -29,7 +29,7 @@ function Books() {
   };
   
   useEffect(() => {
-    loadBooks()
+    loadCryptos()
     fetchData();
   }, [])
 
@@ -40,19 +40,19 @@ function Books() {
   
   // },[]);
   console.log(results, "from results")
-  // Loads all books and sets them to books
-  function loadBooks() {
-    API.getBooks()
+  // Loads all cryptos and sets them to cryptos
+  function loadCryptos() {
+    API.getCryptos()
       .then(res => 
-        setBooks(res.data)
+        setCryptos(res.data)
       )
       .catch(err => console.log(err));
   };
 
-  // Deletes a book from the database with a given id, then reloads books from the db
-  function deleteBook(id) {
-    API.deleteBook(id)
-      .then(res => loadBooks())
+  // Deletes a crypto from the database with a given id, then reloads cryptos from the db
+  function deleteCrypto(id) {
+    API.deleteCrypto(id)
+      .then(res => loadCryptos())
       .catch(err => console.log(err));
   }
 
@@ -62,17 +62,17 @@ function Books() {
     setFormObject({...formObject, [name]: value})
   };
 
-  // When the form is submitted, use the API.saveBook method to save the book data
-  // Then reload books from the database
+  // When the form is submitted, use the API.savecrypto method to save the crypto data
+  // Then reload cryptos from the database
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.title && formObject.author) {
-      API.saveBook({
+      API.saveCrypto({
         title: formObject.title,
         author: formObject.author,
         synopsis: formObject.synopsis
       })
-        .then(res => loadBooks())
+        .then(res => loadCryptos())
         .catch(err => console.log(err));
     }
   };
@@ -91,7 +91,7 @@ function Books() {
           </Col>
           <Col size="md-6">
             <Jumbotron>
-              <h1>My Wallet</h1>
+              <h1>My Crypto</h1>
             </Jumbotron>
             <Row>
               <Col size="md-6">
@@ -116,22 +116,22 @@ function Books() {
                 disabled={!(formObject.author && formObject.title)}
                 onClick={handleFormSubmit}
               >
-                Submit Book
+                Submit
               </FormBtn>
             </form>
             </Col>
             <Col size="md-6">
               <h2>My Coins</h2>
-              {books.length ? (
+              {cryptos.length ? (
               <List>
-                {books.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
+                {cryptos.map(crypto => (
+                  <ListItem key={crypto._id}>
+                    <Link to={"/cryptos/" + crypto._id}>
                       <strong>
-                        {book.title}: {book.author}
+                        {crypto.title}: {crypto.author}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => deleteBook(book._id)} />
+                    <DeleteBtn onClick={() => deleteCrypto(crypto._id)} />
                   </ListItem>
                 ))}
               </List>
@@ -153,4 +153,4 @@ function Books() {
   }
 
 
-export default Books;
+export default Cryptos;

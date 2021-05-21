@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Books from "./pages/Books";
+import Cryptos from "./pages/Cryptos";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
@@ -12,10 +12,10 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Route exact path={["/", "/books"]}>
-            <Books />
+          <Route exact path={["/", "/cryptos"]}>
+            <Cryptos />
           </Route>
-          <Route exact path="/books/:id">
+          <Route exact path="/cryptos/:id">
             <Detail />
           </Route>
           <Route>
