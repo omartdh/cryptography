@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASEURL = "https://newsapi.org/v2/everything?q=";
+const BASEURL = "https://newsapi.org/v2/top-headlines?q=";
 const APIKEY = "&apiKey=5520d2398c314ea08934c7496ff4862c";
  
 
