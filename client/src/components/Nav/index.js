@@ -7,8 +7,13 @@ function Nav() {
     className="navbar navbar-dark bg">
       <a style={{fontSize: 40, color: "white"}}
          href="/">
-        Crtyptography
+        Cryptography
       </a>
+      <a style={{textalign:"left", color: "white"}}
+      href="/signup/">
+        Sign Up 
+      </a>
+
     </nav>
   );
 }

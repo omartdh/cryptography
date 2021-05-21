@@ -22,7 +22,7 @@ function App() {
             <NoMatch />
           </Route>
         </Switch>
-        <Footer/>
+        <Footer />
       </div>
     </Router>
   );
