@@ -1,5 +1,6 @@
 .footer {
     min-height: 8%;
+    position: fixed;
     background: #E5E5E5;
     border-top: 1px solid #ccc;
     display: flex;
