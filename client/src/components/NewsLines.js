@@ -44,14 +44,12 @@ class SearchResultContainer extends Component {
     return (
       <div>
         <div>
-          <ul>
-          {/* {this.state.results.map( res => <li>{res.title}</li>)} */}
+          <ul class="list-overflow-container">
           {this.state.results.map( (res, index) => 
-          <li class="card card-body" key={index}><a href={res.url}><img class="col-12" src={res.urlToImage}/></a><a href={res.url} target="_blank">{res.title}</a></li>)}
+          <li class="card-body card" key={index}><a href={res.url}><img class="col-12" src={res.urlToImage}/></a><a href={res.url} target="_blank">{res.title}</a></li>
+      
           
-
-          
-         {/* <li key={index}><a href={res.url} target="_blank">{res.title}</a></li>)} */}
+          )}
           </ul>
         </div>
         {/* <SearchForm
