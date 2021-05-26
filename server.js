@@ -18,8 +18,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
 
+// mongoose.connect(
+//   process.env.MONGODB_URI || 'mongodb://localhost/workouts',
+
 const mongo_uri = 'mongodb://localhost/reactreadinglist';
-mongoose.connect(mongo_uri, { useNewUrlParser: true, useUnifiedTopology: true }, function(err) {
+mongoose.connect(process.env.MONGODB_URI || mongo_uri, { useNewUrlParser: true, useUnifiedTopology: true }, function(err) {
   if (err) {
     throw err;
   } else {
