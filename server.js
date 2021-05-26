@@ -34,7 +34,7 @@ mongoose.connect(process.env.MONGODB_URI || mongo_uri, { useNewUrlParser: true, 
 
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'client/public', 'index.html'));
 });
 
 app.get('/api/home', function(req, res) {
