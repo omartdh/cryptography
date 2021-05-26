@@ -5,10 +5,13 @@ export default {
 
   // Gets all 
   getCryptos: function() {
+    console.log("testing apis")
     return axios.get("/api/cryptos");
+    
   },
   // Gets the crypto with the given id
   getCrypto: function(id) {
+    console.log("testing api again")
     return axios.get("/api/cryptos/" + id);
   },
   // Deletes the crypto with the given id

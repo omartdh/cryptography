@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const User = require('./models/User');
 const withAuth = require('./middleware');
 const PORT = process.env.PORT || 3001;
+const routes = require("./routes");
 
 
 const app = express();
@@ -106,7 +107,7 @@ app.get('/checkToken', withAuth, function(req, res) {
 //   app.use(express.static("client/build"));
 // }
 // // Add routes, both API and view
-// app.use(routes);
+app.use(routes);
 
 // Connect to the Mongo DB
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
