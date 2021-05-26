@@ -2,7 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Cryptos from "./pages/Cryptos";
 import Detail from "./pages/Detail";
+import CoinDetailPage from "./pages/CoinDetailPage/index"
 import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -19,14 +21,20 @@ function App() {
           <Route exact path="/cryptos/:id">
             <Detail />
           </Route>
+          <Route exact path="/coins/:id">
+             <CoinDetailPage />
+          </Route>
           <Route exact path="/signup">
             <Signup />
+          </Route>
+          <Route exact path="/login">
+            <Login />
           </Route>
           <Route>
             <NoMatch />
           </Route>
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );

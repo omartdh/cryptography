@@ -1,0 +1,60 @@
+.container {
+    /* background: linear-gradient(-100deg, white 50%, deeppink 50%); */
+    margin-top: 20px;
+    
+
+}
+
+.img-text{
+    width: 100%;
+    height: 300px;
+    display: block;
+    text-align: center;
+    padding: 40% 5%;
+    background: #262626;
+    color: #fff;
+    border-radius: 15px;
+}
+
+.img-text p{
+    margin-top: 40px;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 19px;
+}
+.img-text a{
+   color: white;
+}
+
+.single-box{
+    position: relative;
+    margin-bottom: 30%;
+}
+.img-area{
+    position: absolute;
+    width: 100%;
+    height: 170px;
+    /* border: 5px solid #fff; */
+    overflow: hidden;
+    /* top: 15px;
+    left: 125px; */
+    /* border-radius: 50%; */
+}
+.img-area img{
+    width: 100%;
+}
+.carousel-indicators{
+    left: 0;
+    top: 330px;
+    bottom: -70px;
+}
+.carousel-indicators li{
+    background: #000;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+}
+.carousel-indicators .active{
+    background: rgb(126, 122, 122);
+}
