@@ -13,4 +13,8 @@ router
   .put(cryptosController.update)
   .delete(cryptosController.remove);
 
+  router
+    .route("/search/:title")
+    .get(cryptosController.findByTitle)
+
 module.exports = router;
