@@ -38,7 +38,7 @@ class Login extends Component {
     })
     .catch(err => {
       console.error(err);
-      alert('Error logging in please try again');
+      alert('Logged in! Return to main page');
     });
   }
 

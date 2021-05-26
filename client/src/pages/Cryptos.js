@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import DeleteBtn from "../components/DeleteBtn";
-import Jumbotron from "../components/Jumbotron";
+import SlideNews from "../components/SlideNews";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, InputList, TextArea, FormBtn } from "../components/Form";
 import CoinList from "../components/CoinList/CoinList";
-import NewsLines from "../components/NewsLines";
+import Chart from "../components/Chart/index";
 import Api from "../utils/Api1";
+
 
 function Cryptos() {
   // Setting our component's initial state
@@ -16,92 +17,106 @@ function Cryptos() {
   const [formObject, setFormObject] = useState({})
   const [results, setResults] = useState([])
   // Load all cryptos and store them with setCryptos
-  
+
   const fetchData = async () => {
     const response = await Api.get("/coins/markets/", {
       params: {
         vs_currency: "usd",
-        ids: "bitcoin, ethereum, dogecoin, cardano, ripple, litecoin, bitcoin-cash, binancecoin, ethereum-classic, "
+        ids: "bitcoin, ethereum, dogecoin, cardano, ripple, litecoin, bitcoin-cash, binancecoin, ethereum-classic"
       },
     });
     setResults(response.data)
     
   };
-  
+
   useEffect(() => {
-    loadCryptos()
     fetchData();
+    loadCryptos()
   }, [])
 
   
-
-  // useEffect(() => {
-
   
-  // },[]);
-  console.log(results, "from results")
   // Loads all cryptos and sets them to cryptos
   function loadCryptos() {
     API.getCryptos()
       .then(res => 
         setCryptos(res.data)
+        
       )
       .catch(err => console.log(err));
+      
   };
 
   // Deletes a crypto from the database with a given id, then reloads cryptos from the db
   function deleteCrypto(id) {
     API.deleteCrypto(id)
-      .then(res => loadCryptos())
+      .then(res => {
+        loadCryptos()
+      })
       .catch(err => console.log(err));
   }
 
   // Handles updating component state when the user types into the input field
+  
   function handleInputChange(event) {
+    console.log(event.target, "from handleinpot")
     const { name, value } = event.target;
     setFormObject({...formObject, [name]: value})
+    console.log(formObject, "formObject")
   };
 
-  // When the form is submitted, use the API.savecrypto method to save the crypto data
-  // Then reload cryptos from the database
-  function handleFormSubmit(event) {
+  async function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.title && formObject.author) {
-      API.saveCrypto({
-        title: formObject.title,
-        author: formObject.author,
-        synopsis: formObject.synopsis
-      })
-        .then(res => loadCryptos())
-        .catch(err => console.log(err));
+      try {
+        const searchResponse = await API.searchCrypto(formObject.title)
+        console.log(searchResponse.data, "from crypto0000")
+        if(searchResponse.data.length > 0){
+          const updateResponse = await API.updateCrypto(searchResponse.data[0]._id, {
+            ...searchResponse.data[0], author : formObject.author
+          })
+          console.log(updateResponse, "from crypto555")
+        } else {
+          await API.saveCrypto({
+            title: formObject.title,
+            author: formObject.author,
+            synopsis: formObject.synopsis
+          })   
+        }
+
+      } catch (error) {
+        console.log(error) 
+      }
+      loadCryptos();
     }
   };
-  
-
 
     return (
+      <>
+      <SlideNews />
       <Container fluid>
         <Row>
           <Col size="md-3">
-            <Jumbotron>
-              <h1> Crypto Prices</h1>
-              </Jumbotron>
               <CoinList 
-              coins = {results} />
+              coins = {results}
+              />
           </Col>
           <Col size="md-6">
-            <Jumbotron>
-              <h1>My Crypto</h1>
-            </Jumbotron>
-            <Row>
-              <Col size="md-6">
               <h2>Add New Crypto</h2>
             <form>
+            <Input
+                onChange={handleInputChange}
+                name="title"
+                placeholder="coin name (required)"
+              />
+              {/* {(results.length === 0) ? '' :
               <InputList
                 coins = {results}
                 onChange= {handleInputChange}
                 name="Select Crypto"
+                // onClick={handleInputChange}
               />
+            } */}
               <Input
                 onChange={handleInputChange}
                 name="author"
@@ -118,37 +133,38 @@ function Cryptos() {
               >
                 Submit
               </FormBtn>
+        {(cryptos.length === 0) ? '' :
+              <Chart
+              coins={cryptos}
+               />
+            }
             </form>
-            </Col>
-            <Col size="md-6">
-              <h2>My Coins</h2>
+          </Col>
+          <Col size="md-3">
+          <h2>My Coins</h2>
               {cryptos.length ? (
               <List>
                 {cryptos.map(crypto => (
                   <ListItem key={crypto._id}>
                     <Link to={"/cryptos/" + crypto._id}>
-                      <strong>
-                        {crypto.title}: {crypto.author}
-                      </strong>
+                      <table>
+                        <tr>
+                          <tr><strong>{crypto.title}</strong></tr>
+                         <tr>{crypto.author}</tr>
+                        </tr>
+                      </table>
                     </Link>
                     <DeleteBtn onClick={() => deleteCrypto(crypto._id)} />
                   </ListItem>
                 ))}
               </List>
             ) : (
-              <h3>No moniez :(</h3>
+              <h3>Please log in to add currency!</h3>
             )}
-            </Col>
-            </Row>
-          </Col>
-          <Col size="md-3">
-            <Jumbotron>
-              <h1>Crypto News</h1>
-            </Jumbotron>
-            <NewsLines />
           </Col>
         </Row>
       </Container>
+      </>
     );
   }
 
