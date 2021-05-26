@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import Container from "../../components/Container";
 import Col from "../../components/Col";
 import Row from "../../components/Row";
-import axios from "axios"
 
-class Signup extends Component {
+class Login extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -22,21 +21,24 @@ class Signup extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    axios.post('/api/register',
-      this.state
-    )
+    fetch('/api/authenticate', {
+      method: 'POST',
+      body: JSON.stringify(this.state),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
     .then(res => {
-      console.log("res",res)
       if (res.status === 200) {
         this.props.history.push('/');
-      }
-      else {
+      } else {
         const error = new Error(res.error);
         throw error;
       }
     })
     .catch(err => {
       console.error(err);
+      alert('Error logging in please try again');
     });
   }
 
@@ -47,7 +49,7 @@ render() {
           <Container className="mt-3 px-5">
                 <Row className="form-group">
                   <Col size="12">
-        <h1>Register New Account</h1>
+        <h1>Login Below!</h1>
         <input
           type="username"
           name="username"
@@ -76,4 +78,4 @@ render() {
     );
   }
 }
-export default Signup
+export default Login
