@@ -1,0 +1,13 @@
+img {
+    width: 10%
+}
+
+.badge {
+    font-size: 18px;
+}
+.coin-name {
+    font-size: 25px;
+}
+.badge-danger{
+    background-color: rgb(202, 8, 8);
+}
