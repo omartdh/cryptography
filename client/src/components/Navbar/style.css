@@ -1,6 +1,69 @@
-nav.navbar.navbar-default {
-  margin: 0;
+.navbar {
+  z-index: 2000;
+  /* display: flex; */
+  width: 100%;
+  background: rgba(26, 25, 25, 0.94);
+  margin-top: 0;
+  height: 102px;
+
 }
+.navbar a {
+  align-items: center;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: 0.3s;
+  font-size: 22px; 
+  font-family: 'Roboto Slab', serif;
+
+}
+.navbar i {
+  align-items: center;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: 0.3s;
+  font-size: 15px;   
+
+}
+
+.navbar a i {
+  font-size: 26px;
+  padding-right: 8px;
+  color: gray;
+}
+#nav1 a:hover,
+#nav1 .active > a {
+  text-decoration: none;
+  color: white;
+}
+.navbar a:hover i,
+.navbar .active > a i {
+  color: rgb(56, 126, 192);
+}
+.navbar-toggler {
+  color: white;
+  background-color: rgb(71, 70, 70);
+  width: 100px;
+  padding: 9px 21px 0px 0px;
+}
+
+h2 {
+  font-size: 45px;
+  font-family: 'Roboto Slab', serif;
+  margin-top: 12px;
+}
+
+.navbar li {
+ margin-top: 50px;
+
+}
+
+
+
+/* nav.navbar.navbar-default {
+  margin: 0;
+} */
 
 /* .navbar {
   position: fixed;

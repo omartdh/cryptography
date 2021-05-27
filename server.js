@@ -5,10 +5,9 @@ const path = require('path');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const User = require('./models/User');
-const withAuth = require('./middleware');
+// const withAuth = require('./middleware');
 const PORT = process.env.PORT || 3001;
-const routes = require("./routes");
-
+const routes = require('./routes');
 
 const app = express();
 
@@ -18,6 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
 
+app.use(routes);
 // mongoose.connect(
 //   process.env.MONGODB_URI || 'mongodb://localhost/workouts',
 
@@ -101,9 +101,9 @@ app.post('/api/authenticate', function(req, res) {
   });
 });
 
-app.get('/checkToken', withAuth, function(req, res) {
-  res.sendStatus(200);
-});
+// app.get('/checkToken', withAuth, function(req, res) {
+//   res.sendStatus(200);
+// });
 
 // // Define middleware here
 // app.use(express.urlencoded({ extended: true }));
@@ -111,7 +111,7 @@ app.get('/checkToken', withAuth, function(req, res) {
 // // Serve up static assets (usually on heroku)
 
 // // Add routes, both API and view
-app.use(routes);
+
 
 // Connect to the Mongo DB
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");

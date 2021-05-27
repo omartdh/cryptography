@@ -1,12 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Cryptos from "./pages/Cryptos";
-import Detail from "./pages/Detail";
+import Cryptos from "./pages/Cryptos/Cryptos";
+import Detail from "./pages/Details/Details"
 import CoinDetailPage from "./pages/CoinDetailPage/index"
 import Signup from "./pages/Signup";
-import NoMatch from "./pages/NoMatch";
+// import Login from "./pages/Login";
+import NoMatch from "./pages/NoMatch/NoMatch";
 import Navbar from "./components/Navbar";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 import Login from "./pages/Login/index";
 // import withAuth from "./withAuth"
 // import withAuth from '../../middleware';
@@ -15,7 +16,6 @@ import Login from "./pages/Login/index";
 function App() {
   return (
     <Router>
-      <div>
         <Navbar />
         <Switch>
         {/* <Route path={["/", "/cyptos"]} componenet={withAuth(Cryptos)} /> */}
@@ -39,8 +39,7 @@ function App() {
             <NoMatch />
           </Route>
         </Switch>
-        {/* <Footer /> */}
-      </div>
+        <Footer />
     </Router>
   );
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Container from "../../components/Container";
 import Col from "../../components/Col";
 import Row from "../../components/Row";
+import "./style.css"
 
 class Login extends Component {
   constructor(props) {
@@ -49,8 +50,8 @@ render() {
           <Container className="mt-3 px-5">
                 <Row className="form-group">
                   <Col size="12">
-        <h1>Login Below!</h1>
-        <input
+        <div className="login-text">Login Below!</div>
+        <input className="input-field"
           type="username"
           name="username"
           placeholder="Enter username"
@@ -62,7 +63,7 @@ render() {
         </Row>
         <Row className="form-group">
         <Col size="12">
-        <input
+        <input className="input-field"
           type="password"
           name="password"
           placeholder="Enter password"
@@ -72,7 +73,7 @@ render() {
         />
         </Col>
                 </Row>
-        <input type="submit" value="Submit"/>
+        <input className="mybtn" type="submit" value="Submit"/>
         </Container>
       </form>
     );

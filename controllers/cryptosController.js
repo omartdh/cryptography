@@ -3,7 +3,7 @@ const db = require("../models");
 // Defining methods for the cryptosController
 module.exports = {
   findAll: function(req, res) {
-    console.log("test 1")
+    console.log("test1")
     db.Crypto
       .find(req.query)
       .sort({ date: -1 })
@@ -11,8 +11,8 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
+    console.log("test2")
     db.Crypto
-    console.log("test 2")
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
