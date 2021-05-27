@@ -31,11 +31,12 @@ You could aslo:
   
   ​Contributors:
 
-  Michael  Kahn: @mpkahn
+  Michael  Kahn: https://github.com/mpkahn
 
-  Omar Dahmash: @omartdh
+  Omar Dahmash: https://github.com/omartdh
 
-  Miguel Alcantar: @malcan09
+  Miguel Alcantar: https://github.com/malcan09
+ 
   # Tests
   To run tests, you need to run the following command: 
   
