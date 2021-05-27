@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
-import DeleteBtn from "../components/DeleteBtn";
-import SlideNews from "../components/SlideNews";
-import API from "../utils/API";
+import DeleteBtn from "../../components/DeleteBtn";
+import SlideNews from "../../components/SlideNews";
+import API from "../../utils/API";
 import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
-import { Input, InputList, TextArea, FormBtn } from "../components/Form";
-import CoinList from "../components/CoinList/CoinList";
-import Chart from "../components/Chart/index";
-import Api from "../utils/Api1";
-
+import { Col, Row, Container } from "../../components/Grid";
+import { List, ListItem } from "../../components/List";
+import { Input, InputList, TextArea, FormBtn } from "../../components/Form";
+import CoinList from "../../components/CoinList/CoinList";
+import Chart from "../../components/Chart/index";
+import Api from "../../utils/Api1";
+import "./style.css"
 
 function Cryptos() {
   // Setting our component's initial state
   const [cryptos, setCryptos] = useState([])
   const [formObject, setFormObject] = useState({})
   const [results, setResults] = useState([])
+  const [theCoin, setTheCoin] = useState()
   // Load all cryptos and store them with setCryptos
 
   const fetchData = async () => {
@@ -70,12 +71,10 @@ function Cryptos() {
     if (formObject.title && formObject.author) {
       try {
         const searchResponse = await API.searchCrypto(formObject.title)
-        console.log(searchResponse.data, "from crypto0000")
         if(searchResponse.data.length > 0){
           const updateResponse = await API.updateCrypto(searchResponse.data[0]._id, {
             ...searchResponse.data[0], author : formObject.author
           })
-          console.log(updateResponse, "from crypto555")
         } else {
           await API.saveCrypto({
             title: formObject.title,
@@ -90,19 +89,28 @@ function Cryptos() {
       loadCryptos();
     }
   };
-
+  if(theCoin){
+    console.log(theCoin, "9093333")
+  }
+  
+ 
     return (
       <>
       <SlideNews />
       <Container fluid>
-        <Row>
+        {/* <Row>
+        <Col size="md-12">
+          
+          </Col>
+          </Row> */}
+          <Row>
           <Col size="md-3">
               <CoinList 
               coins = {results}
               />
           </Col>
           <Col size="md-6">
-              <h2>Add New Crypto</h2>
+              <h2 className="addCrypto">Add New Crypto</h2>
             <form>
             <Input
                 onChange={handleInputChange}
@@ -131,7 +139,7 @@ function Cryptos() {
                 disabled={!(formObject.author && formObject.title)}
                 onClick={handleFormSubmit}
               >
-                Submit
+                Add
               </FormBtn>
         {(cryptos.length === 0) ? '' :
               <Chart
@@ -141,7 +149,7 @@ function Cryptos() {
             </form>
           </Col>
           <Col size="md-3">
-          <h2>My Coins</h2>
+          <h2 className="my-coins">My Coins</h2>
               {cryptos.length ? (
               <List>
                 {cryptos.map(crypto => (

@@ -3,6 +3,7 @@ import Container from "../../components/Container";
 import Col from "../../components/Col";
 import Row from "../../components/Row";
 import axios from "axios"
+import "./style.css"
 
 class Signup extends Component {
   constructor(props) {
@@ -48,8 +49,8 @@ render() {
           <Container className="mt-3 px-5">
                 <Row className="form-group">
                   <Col size="12">
-        <h1>Register New Account</h1>
-        <input
+        <div className="login-text">Register New Account</div>
+        <input className="input-field"
           type="username"
           name="username"
           placeholder="Enter username"
@@ -61,7 +62,7 @@ render() {
         </Row>
         <Row className="form-group">
         <Col size="12">
-        <input
+        <input className="input-field"
           type="password"
           name="password"
           placeholder="Enter password"
@@ -71,7 +72,7 @@ render() {
         />
         </Col>
                 </Row>
-        <input type="submit" value="Submit"/>
+        <input className="mybtn" type="submit" value="Submit"/>
         </Container>
       </form>
     );

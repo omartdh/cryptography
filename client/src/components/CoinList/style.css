@@ -4,9 +4,11 @@ img {
 
 .badge {
     font-size: 18px;
+    margin-right: -34px;
 }
 .coin-name {
     font-size: 25px;
+    text-align: center;
 }
 .badge-danger{
     background-color: rgb(202, 8, 8);
