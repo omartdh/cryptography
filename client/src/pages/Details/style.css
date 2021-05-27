@@ -1,0 +1,32 @@
+ .page-header {
+        font-size: 94px;
+        margin-top: 39px;
+        text-align: center;
+        font-family: 'Play', sans-serif;
+        font-weight: 550;
+    }
+
+.amont-holding {
+    text-align: center;
+    font-family: 'Play', sans-serif;
+    font-size: 72px;
+
+}
+
+h3 {
+    text-align: center;
+    
+}
+
+p {
+    text-align: center;
+    font-size: 59px;
+    margin-left: 355px;
+}
+
+.line-1 {
+    height: 5px;
+    background-color: black;
+    margin: 50px 50px 50px 50px;
+}
+

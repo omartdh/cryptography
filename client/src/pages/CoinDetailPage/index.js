@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import HistoryChart from "../../components/HistoryChart/HistoryChart";
 import { Col, Row, Container } from "../../components/Grid";
 // import Jumbotron from "../components/Jumbotron";
 import CoinData from "../../components/CoinData/CoinData";
 import Api from "../../utils/Api1";
-
+import "./style.css"
 
 
   const CoinDetailPage = () => {
@@ -69,31 +69,37 @@ import Api from "../../utils/Api1";
     if (isLoading) {
       return <div>Loading....</div>;
     }
-    return (
-      <Container fluid>
-      <Row>
-      <Col size="md-3">
-        </Col>
-        <Col size="md-6">
-        <CoinData data={coinData.detail} />
-        </Col>
-        <Col size="md-3">
-        </Col>
-        </Row>
 
-        <Row>
-        <Col size="md-3">
-        </Col>
-        <Col size="md-6">
-        {(coinData.length === 0) ? '' :
+    return (
+      <div className="coinlist">
         <HistoryChart data={coinData} />
-      }    
-        </Col>
-        <Col size="md-3">
-        </Col>
-      </Row>
-    </Container>
+        <CoinData data={coinData.detail} />
+      </div>
     );
+
+    // return (
+    //   <Container fluid>
+    //   <Row>
+    //   <Col size="md-3">
+    //     </Col>
+    //     <Col size="md-6">
+    //     <CoinData data={coinData.detail} />
+    //     </Col>
+    //     <Col size="md-3">
+    //     </Col>
+    //     </Row>
+
+    //     <Row>
+    //     <Col size="md-3">
+    //     </Col>
+    //     <Col size="md-6">
+    //     <HistoryChart data={coinData} />
+    //     </Col>
+    //     <Col size="md-3">
+    //     </Col>
+    //   </Row>
+    // </Container>
+   // );
   };
 
   return renderData();

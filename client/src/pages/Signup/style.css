@@ -1,0 +1,37 @@
+.login-text{
+    text-align: center;
+    font-size: 69px;
+    margin-top: 39px;
+    text-align: center;
+    font-family: 'Play', sans-serif;
+    font-weight: 5400;
+
+}
+
+.input-field{
+    display: block;
+    width: 46%;
+    padding: 0.375rem 1rem;
+    font-size: 2rem;
+    margin-left: 568px;
+    line-height: 2.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 1.25rem;
+
+}
+
+.mybtn{
+    margin-left: 953px;
+    font-size: 48px;
+    margin-top: 43px;
+    margin-bottom: 280px;
+    font-family: 'Roboto Slab', serif;
+    border-radius: 1.25rem;
+    background-color: #359c54;
+    color: white;
+    padding: 12px;
+
+}

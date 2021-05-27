@@ -10,7 +10,7 @@
     height: 300px;
     display: block;
     text-align: center;
-    padding: 40% 5%;
+    padding: 54% 5%;
     background: #262626;
     color: #fff;
     border-radius: 15px;
@@ -21,7 +21,7 @@
     font-size: 25px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 19px;
+    font-size: 15px;
 }
 .img-text a{
    color: white;
