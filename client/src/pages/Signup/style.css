@@ -13,7 +13,8 @@
     width: 46%;
     padding: 0.375rem 1rem;
     font-size: 2rem;
-    margin-left: 568px;
+    /* margin-left: 568px; */
+    margin: auto;
     line-height: 2.5;
     color: #495057;
     background-color: #fff;
@@ -24,7 +25,8 @@
 }
 
 .mybtn{
-    margin-left: 953px;
+    margin-left: 45%;
+    margin-right: 55%;
     font-size: 48px;
     margin-top: 43px;
     margin-bottom: 280px;
