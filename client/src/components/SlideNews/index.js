@@ -98,10 +98,10 @@ class SearchResult extends Component {
                           </div>
                           <div className="col-md-4">
                             <div className="single-box">
-                              <div className="img-area"><a href={this.state.results[5].url}><img src={this.state.results[5].urlToImage} alt="" /></a>
+                              <div className="img-area"><a href={this.state.results[0].url}><img src={this.state.results[0].urlToImage} alt="" /></a>
                               </div>
                               <div className="img-text">
-                                <p><a href={this.state.results[5].url}>{this.state.results[5].title}</a></p>
+                                <p><a href={this.state.results[0].url}>{this.state.results[0].title}</a></p>
                               </div>
                             </div>
                           </div>

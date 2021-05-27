@@ -7,8 +7,8 @@ import API from "../utils/API";
 function Detail(props) {
   const [crypto, setCrypto] = useState({})
 
-  // When this component mounts, grab the book with the _id of props.match.params.id
-  // e.g. localhost:3000/books/599dcb67f0f16317844583fc
+  // When this component mounts, grab the crypto with the _id of props.match.params.id
+  // e.g. localhost:3000/cryptos/599dcb67f0f16317844583fc
   const {id} = useParams()
   useEffect(() => {
     API.getCrypto(id)

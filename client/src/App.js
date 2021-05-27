@@ -4,15 +4,13 @@ import Cryptos from "./pages/Cryptos";
 import Detail from "./pages/Detail";
 import CoinDetailPage from "./pages/CoinDetailPage/index"
 import Signup from "./pages/Signup";
-// import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
 import Navbar from "./components/Navbar";
 // import Footer from "./components/Footer";
 import Login from "./pages/Login/index";
 // import withAuth from "./withAuth"
 // import withAuth from '../../middleware';
-// import Secret from './Secret';
-// import Login from './Login';
+
 
 function App() {
   return (
@@ -20,10 +18,11 @@ function App() {
       <div>
         <Navbar />
         <Switch>
+        {/* <Route path={["/", "/cyptos"]} componenet={withAuth(Cryptos)} /> */}
           <Route exact path={["/", "/cryptos"]}>
             <Cryptos />
           </Route>
-          {/* <Route exact path="/cryptos/:id" componenet={withAuth(Detail)} /> */}
+          {/* <Route path="/cryptos/:id" componenet={withAuth(Detail)} /> */}
           <Route exact path="/cryptos/:id">
             <Detail />
           </Route>
