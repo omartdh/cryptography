@@ -159,7 +159,7 @@ function Cryptos() {
                 ))}
               </List>
             ) : (
-              <h3>No moniez :(</h3>
+              <h3>Please log in to add currency!</h3>
             )}
           </Col>
         </Row>

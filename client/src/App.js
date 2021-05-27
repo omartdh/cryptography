@@ -7,9 +7,9 @@ import Signup from "./pages/Signup";
 // import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import Login from "./pages/Login/index";
-import withAuth from "./withAuth"
+// import withAuth from "./withAuth"
 // import withAuth from '../../middleware';
 // import Secret from './Secret';
 // import Login from './Login';
@@ -23,6 +23,7 @@ function App() {
           <Route exact path={["/", "/cryptos"]}>
             <Cryptos />
           </Route>
+          {/* <Route exact path="/cryptos/:id" componenet={withAuth(Detail)} /> */}
           <Route exact path="/cryptos/:id">
             <Detail />
           </Route>

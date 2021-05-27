@@ -1,57 +1,81 @@
-import React, { useState } from "react";
+import React, { Component } from 'react';
 import Container from "../../components/Container";
 import Col from "../../components/Col";
 import Row from "../../components/Row";
 
-function Login() {
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+class Login extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      username : '',
+      password: ''
+    };
+  }
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    console.log("username is " + username);
-    console.log("password is " + password);
-  };
+  handleInputChange = (event) => {
+    const { value, name } = event.target;
+    this.setState({
+      [name]: value
+    });
+  }
 
-  return (
-    <div>
-      <div className="mt-4">
-        <h2>  Log In to Cryptogroghy</h2>
-      </div>
-      <form onSubmit={handleSubmit}>
-        <Container className="mt-3 px-5">
-          <Row className="form-group">
-            <Col size="12">
-              <input
-                className="form-control"
-                type="text"
-                placeholder="Username"
-                name="username"
-                onChange={e => setUsername(e.target.value)}
-              />
-            </Col>
-          </Row>
-          <Row className="form-group">
-            <Col size="12">
-              <input
-                className="form-control"
-                type="password"
-                placeholder="Password"
-                name="password"
-                onChange={e => setPassword(e.target.value)}
-              />
-            </Col>
-          </Row>
-          <button className="btn btn-success" type="submit">
-            Submit
-          </button>
-        </Container>
-        <Container className="mt-4">
-          <h3>Hello {username}!</h3>
+  onSubmit = (event) => {
+    event.preventDefault();
+    fetch('/api/authenticate', {
+      method: 'POST',
+      body: JSON.stringify(this.state),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => {
+      if (res.status === 200) {
+        this.props.history.push('/');
+      } else {
+        const error = new Error(res.error);
+        throw error;
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      alert('Logged in! Return to main page');
+    });
+  }
+
+render() {
+    return (
+        
+      <form onSubmit={this.onSubmit}>
+          <Container className="mt-3 px-5">
+                <Row className="form-group">
+                  <Col size="12">
+        <h1>Login Below!</h1>
+        <input
+          type="username"
+          name="username"
+          placeholder="Enter username"
+          value={this.state.username}
+          onChange={this.handleInputChange}
+          required
+        />
+        </Col>
+        </Row>
+        <Row className="form-group">
+        <Col size="12">
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter password"
+          value={this.state.password}
+          onChange={this.handleInputChange}
+          required
+        />
+        </Col>
+                </Row>
+        <input type="submit" value="Submit"/>
         </Container>
       </form>
-    </div>
-  );
+    );
+  }
 }
-
-export default Login;
+export default Login

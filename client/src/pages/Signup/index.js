@@ -37,6 +37,7 @@ class Signup extends Component {
     })
     .catch(err => {
       console.error(err);
+      alert("Registered account!")
     });
   }
 
