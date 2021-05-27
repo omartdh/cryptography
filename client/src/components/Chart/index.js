@@ -7,7 +7,7 @@ class Chart extends Component {
         super(props);
         console.log(this.props, "from Charts")
         const coinTitle = this.props.coins.map(coin => coin.title)
-        const coinAmount = this.props.coins.map(coin => coin.author)
+        const coinAmount = this.props.coins.map(coin => coin.amount)
         this.state = {
             chartData:{
                 labels: coinTitle,

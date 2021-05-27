@@ -22,8 +22,8 @@ export default {
   saveCrypto: function(cryptoData) {
     return axios.post("/api/cryptos", cryptoData);
   },
-  searchCrypto: function(author) {
-    return axios.get("/api/cryptos/search/" + author);
+  searchCrypto: function(amount) {
+    return axios.get("/api/cryptos/search/" + amount);
   },
   //need to figuer out how to trigger this
   updateCrypto: function(id, updatedCrypto) {

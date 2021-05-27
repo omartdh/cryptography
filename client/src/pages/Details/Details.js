@@ -24,7 +24,7 @@ function Detail(props) {
               <div className="page-header">
                 {crypto.title} 
               </div>
-              <div className="amont-holding">holding: {crypto.author}</div>
+              <div className="amont-holding">holding: {crypto.amount}</div>
               <div className="line-1"></div>
           </Col>
         </Row>

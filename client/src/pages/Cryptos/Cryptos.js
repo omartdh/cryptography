@@ -68,17 +68,17 @@ function Cryptos() {
 
   async function handleFormSubmit(event) {
     event.preventDefault();
-    if (formObject.title && formObject.author) {
+    if (formObject.title && formObject.amount) {
       try {
         const searchResponse = await API.searchCrypto(formObject.title)
         if(searchResponse.data.length > 0){
           const updateResponse = await API.updateCrypto(searchResponse.data[0]._id, {
-            ...searchResponse.data[0], author : formObject.author
+            ...searchResponse.data[0], amount : formObject.amount
           })
         } else {
           await API.saveCrypto({
             title: formObject.title,
-            author: formObject.author,
+            amount: formObject.amount,
             synopsis: formObject.synopsis
           })   
         }
@@ -127,7 +127,7 @@ function Cryptos() {
             } */}
               <Input
                 onChange={handleInputChange}
-                name="author"
+                name="amount"
                 placeholder="Amount holding (required)"
               />
               <TextArea
@@ -136,7 +136,7 @@ function Cryptos() {
                 placeholder="Notes (Optional)"
               />
               <FormBtn
-                disabled={!(formObject.author && formObject.title)}
+                disabled={!(formObject.amount && formObject.title)}
                 onClick={handleFormSubmit}
               >
                 Add
@@ -158,7 +158,7 @@ function Cryptos() {
                       <table>
                         <tr>
                           <tr><strong>{crypto.title}</strong></tr>
-                         <tr>{crypto.author}</tr>
+                         <tr>{crypto.amount}</tr>
                         </tr>
                       </table>
                     </Link>
