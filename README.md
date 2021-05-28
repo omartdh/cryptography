@@ -9,7 +9,7 @@
 
 <img src="public/images/Timeline.png" alt="Timeline">
 
-<img src="public/images/Footer.png" alt="Footer">
+<img src="public/images/bottom.png" alt="footer2">
 
 <img src="public/images/SignUp.png" alt="SignUp">
 
