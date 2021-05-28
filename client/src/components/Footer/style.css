@@ -77,6 +77,7 @@ transition: color .4s ease;
   text-transform: capitalize;
   text-align: center;
   margin-left: 0;
+  
 }
 
 .footer-bottom span{
@@ -85,7 +86,10 @@ transition: color .4s ease;
   font-weight: 200;
 }
 
-
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin-bottom: 0px;
+}
 
 /* .footer {
     min-height: 8%;

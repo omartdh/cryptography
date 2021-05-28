@@ -17,7 +17,7 @@ const CoinData = ({ data }) => {
               <span className="text-muted coin-data-category">
                 Total Supply
               </span>
-              <span className="coin-data">${data.total_supply}</span>
+              <span className="coin-data">{data.total_supply}</span>
             </div>
           </div>
           </div>
@@ -40,7 +40,7 @@ const CoinData = ({ data }) => {
               <span className="text-muted coin-data-category">
                 Circulating Supply
               </span>
-              <span className="coin-data">${data.circulating_supply}</span>
+              <span className="coin-data">{data.circulating_supply}</span>
             </div>
             <hr />
             <div className="col-sm">

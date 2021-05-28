@@ -115,7 +115,7 @@ function Cryptos() {
             <Input
                 onChange={handleInputChange}
                 name="title"
-                placeholder="coin name (required)"
+                placeholder="Coin Name (required)"
               />
               {/* {(results.length === 0) ? '' :
               <InputList
