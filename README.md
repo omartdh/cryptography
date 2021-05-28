@@ -23,6 +23,8 @@
   * [Credits](#questions)
   
   # Installation
+  
+ * Visit site at https://cryptography-ss.herokuapp.com/
  
  You simply create an account with out Sign Up option. Go back to the Main Page and start adding Coins!
 
