@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import HistoryChart from "../../components/HistoryChart/HistoryChart";
-import { Col, Row, Container } from "../../components/Grid";
+// import { Col, Row, Container } from "../../components/Grid";
 // import Jumbotron from "../components/Jumbotron";
 import CoinData from "../../components/CoinData/CoinData";
 import Api from "../../utils/Api1";
@@ -51,7 +51,7 @@ import "./style.css"
           },
         }),
       ]);
-      console.log(coinData, "from CoinDetailsPage");
+      console.log(day, "dayyyyyyy");
 
       setCoinData({
         day: formatData(day.data.prices),
@@ -76,30 +76,6 @@ import "./style.css"
         <CoinData data={coinData.detail} />
       </div>
     );
-
-    // return (
-    //   <Container fluid>
-    //   <Row>
-    //   <Col size="md-3">
-    //     </Col>
-    //     <Col size="md-6">
-    //     <CoinData data={coinData.detail} />
-    //     </Col>
-    //     <Col size="md-3">
-    //     </Col>
-    //     </Row>
-
-    //     <Row>
-    //     <Col size="md-3">
-    //     </Col>
-    //     <Col size="md-6">
-    //     <HistoryChart data={coinData} />
-    //     </Col>
-    //     <Col size="md-3">
-    //     </Col>
-    //   </Row>
-    // </Container>
-   // );
   };
 
   return renderData();

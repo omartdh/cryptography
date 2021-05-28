@@ -1,4 +1,4 @@
-img {
+.logo {
     width: 10%
 }
 
@@ -12,4 +12,8 @@ img {
 }
 .badge-danger{
     background-color: rgb(202, 8, 8);
+}
+
+.perc{
+    font-size: 51px;
 }
