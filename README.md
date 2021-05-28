@@ -7,11 +7,11 @@
  
 <img src="images/Navbar.png" alt="Navbar">
 
-<img src="public/images/Timeline.png" alt="Timeline">
+<img src="images/Timeline.png" alt="Timeline">
 
-<img src="public/images/bottom.png" alt="footer2">
+<img src="images/bottom.png" alt="footer2">
 
-<img src="public/images/SignUp.png" alt="SignUp">
+<img src="images/SignUp.png" alt="SignUp">
 
 
 
