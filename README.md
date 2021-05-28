@@ -5,7 +5,7 @@
   
   Cryptography is a React app that allows you to keep track, as well as add and remove new crypto currancy you have purchase. This coin wallet follows a contructive format in which different API's allows you to see the current coin market in order to know which coins to move forward with. Also, the app consist with updated articles from an news API that allows to keep up to date with any trending information about specific coins that day so you don't miss any opportunity to increaser your wallet.
  
-<img src="public/images/Navbar.png" alt="Navbar">
+<img src="images/Navbar.png" alt="Navbar">
 
 <img src="public/images/Timeline.png" alt="Timeline">
 
