@@ -1,8 +1,9 @@
 
 canvas {
 height:500px !important;
-/* width: 500px !important; */
-margin: 96px;
-margin-left: 280px;
+width: 500px !important;
+/* margin: 96px;
+margin-left: 280px; */
+margin: auto;
 padding-bottom: 44px;
 }

@@ -12,7 +12,7 @@ class SearchResult extends Component {
   headline1 = "";
 
   componentDidMount() {
-    this.searchNews("world");
+    this.searchNews("crypto");
     this.setState({ Loading: false })
   }
 
@@ -45,7 +45,7 @@ class SearchResult extends Component {
                     <div className="carousel-inner">
                       <div className="carousel-item active">
                         <div class="row">
-                          <div className="col-md-3">
+                          <div className="col-md-4">
                             <div className="single-box">
                               <div className="img-area"><a href={this.state.results[0].url}><img src={this.state.results[0].urlToImage} alt="" /></a>
                               </div>
@@ -54,7 +54,7 @@ class SearchResult extends Component {
                               </div>
                             </div>
                           </div>
-                          <div className="col-md-3">
+                          <div className="col-md-4">
                             <div className="single-box">
                               <div className="img-area"><a href={this.state.results[1].url}><img src={this.state.results[1].urlToImage} alt="" /></a>
                               </div>
@@ -63,16 +63,7 @@ class SearchResult extends Component {
                               </div>
                             </div>
                           </div>
-                          <div className="col-md-3">
-                            <div className="single-box">
-                              <div className="img-area"><a href={this.state.results[2].url}><img src={this.state.results[2].urlToImage} alt="" /></a>
-                              </div>
-                              <div className="img-text">
-                                <p><a href={this.state.results[2].url}>{this.state.results[2].title}</a></p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-3">
+                          <div className="col-md-4">
                             <div className="single-box">
                               <div className="img-area"><a href={this.state.results[2].url}><img src={this.state.results[2].urlToImage} alt="" /></a>
                               </div>
@@ -87,25 +78,16 @@ class SearchResult extends Component {
                       <div className="carousel-item">
 
                         <div class="row">
-                          <div className="col-md-3">
+                          <div className="col-md-4">
                             <div className="single-box">
-                              <div className="img-area"><a href={this.state.results[3].url}><img src={this.state.results[3].urlToImage} alt="" /></a>
+                              <div className="img-area"><a href={this.state.results[1].url}><img src={this.state.results[1].urlToImage} alt="" /></a>
                               </div>
                               <div className="img-text">
-                                <p><a href={this.state.results[3].url}>{this.state.results[3].title}</a></p>
+                                <p><a href={this.state.results[1].url}>{this.state.results[1].title}</a></p>
                               </div>
                             </div>
                           </div>
-                          <div className="col-md-3">
-                            <div className="single-box">
-                              <div className="img-area"><a href={this.state.results[4].url}><img src={this.state.results[4].urlToImage} alt="" /></a>
-                              </div>
-                              <div className="img-text">
-                                <p><a href={this.state.results[4].url}>{this.state.results[4].title}</a></p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-3">
+                          <div className="col-md-4">
                             <div className="single-box">
                               <div className="img-area"><a href={this.state.results[0].url}><img src={this.state.results[0].urlToImage} alt="" /></a>
                               </div>
@@ -114,7 +96,7 @@ class SearchResult extends Component {
                               </div>
                             </div>
                           </div>
-                          <div className="col-md-3">
+                          <div className="col-md-4">
                             <div className="single-box">
                               <div className="img-area"><a href={this.state.results[2].url}><img src={this.state.results[2].urlToImage} alt="" /></a>
                               </div>

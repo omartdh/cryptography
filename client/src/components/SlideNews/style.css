@@ -12,7 +12,7 @@
     text-align: center;
     padding: 54% 5%;
     background: #262626;
-    color: #fff;
+    color: rgb(157, 74, 74);
     border-radius: 15px;
 }
 
@@ -21,7 +21,8 @@
     font-size: 25px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 15px;
+    font-size: 18px;
+    margin-left: 0;
 }
 .img-text a{
    color: white;
@@ -46,7 +47,7 @@
 }
 .carousel-indicators{
     left: 0;
-    top: 330px;
+    top: 412px;
     bottom: -70px;
 }
 .carousel-indicators li{

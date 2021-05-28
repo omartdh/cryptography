@@ -4,7 +4,7 @@ footer {
   width: 100vw;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding-top: 40px;
-  color: #fff;
+  color: #bbb5b5;
   margin-top: 100px;
   margin-bottom: 0px;
 
@@ -50,7 +50,7 @@ footer {
 
 .socials a{
   text-decoration: none;
-  color: #fff;
+  color: #bbb5b5;
 
 }
 

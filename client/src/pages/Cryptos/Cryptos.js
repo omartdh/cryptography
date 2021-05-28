@@ -121,7 +121,7 @@ function Cryptos() {
               <InputList
                 coins = {results}
                 onChange= {handleInputChange}
-                name="Select Crypto"
+                name="Select Crypro"
                 // onClick={handleInputChange}
               />
             } */}

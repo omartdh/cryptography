@@ -12,16 +12,8 @@ import "./style.css"
 //     {props.name}
 //   </button>
 //   <div className="dropdown-menu" aria-labelledby="dropdownMenuButton"{...props}>
-//     {/* {props.coins.map( res => <a className="dropdown-item" href="#">{res.name}</a>)} */}
-//     <a class="dropdown-item" href="#" name="Bitcoin" value="title">Bitcoin</a>
-//     <a class="dropdown-item" href="#">Ethereum</a>
-//     <a class="dropdown-item" href="#">Dogecoin</a>
-//     <a class="dropdown-item" href="#">Cardano</a>
-//     <a class="dropdown-item" href="#">Ripple</a>
-//     <a class="dropdown-item" href="#">Litecoin</a>
-//     <a class="dropdown-item" href="#">Bitcoin-Cash</a>
-//     <a class="dropdown-item" href="#">Binancecoin</a>
-//     <a class="dropdown-item" href="#">Ethereum-Classic</a>
+//     {props.coins.map( res => <button className="dropdown-item" name="title" value={res.name}>{res.name}</button>)}
+//     {/* <a class="dropdown-item" href="#" name="title" value="Bitcoin">Bitcoin</a> */}
 //   </div>
 // </div>
 

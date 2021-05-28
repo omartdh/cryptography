@@ -1,0 +1,29 @@
+.coinName img {
+    width: 4%;
+    text-align: center;
+    margin-right: 17px;
+}
+
+.coinName {
+    font-size: 77px;
+    text-align: center;
+    font-family:'Play', sans-serif;
+    
+}
+
+.text-red{
+    color: rgb(202, 8, 8);
+}
+
+.price{
+    margin-left: 43%;
+    margin-right: 57%;
+    font-size: 32px;
+    margin-top: 14px;
+    margin-bottom: 22px;
+}
+
+.perc {
+ font-size: 55px;
+ text-align: center;  
+}

@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import {Chart} from "chart.js";
 import { historyOptions } from "../../chartConfigs/chartConfigs";
+import "./style.css"
 
 const HistoryChart = ({ data }) => {
   console.log(data, "from HistoryChart")
@@ -49,13 +50,22 @@ const HistoryChart = ({ data }) => {
       console.log(detail, "hello price")
       return (
         <>
-          <h1>{detail.name}</h1>
-          <h2 className="my-0">Current Price: ${detail.current_price.toFixed(2)}</h2>
+          <div className="coinName"><img src={detail.image} alt={detail.name}/>{detail.name}</div>
+          <div
+          className={
+            detail.price_change_24h < 0
+              ? "badge price badge-danger p-2"
+              : "badge price badge-success p-2"
+          }
+        >
+          Current Price: ${detail.current_price.toFixed(2)}
+        </div>
+          {/* <h2 className="my-0 price">Current Price: ${detail.current_price.toFixed(2)}</h2> */}
           <h3
             className={
               detail.price_change_24h < 0
-                ? "text-danger my-0"
-                : "text-success my-0"
+                ? "text-red perc my-0"
+                : "text-success perc my-0"
             }
           >
             {detail.price_change_percentage_24h.toFixed(2)}%
@@ -65,9 +75,9 @@ const HistoryChart = ({ data }) => {
     }
   };
   return (
-    <div className="bg-white border mt-2 rounded p-3">
+    <div className="price-header">
       <div>{renderPrice()}</div>
-      <div>
+      {/* <div>
         <canvas ref={chartRef} id="myChart" width={250} height={250}></canvas>
       </div>
 
@@ -90,7 +100,7 @@ const HistoryChart = ({ data }) => {
         >
           1y
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
