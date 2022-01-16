@@ -4,7 +4,7 @@
   width: 100%;
   background: rgba(26, 25, 25, 0.94);
   margin-top: 0;
-  height: 102px;
+  height: 76px;
 
 }
 .navbar a {
@@ -13,7 +13,7 @@
   padding-left: 20px;
   padding-right: 20px;
   transition: 0.3s;
-  font-size: 22px; 
+  font-size: 18px; 
   font-family: 'Roboto Slab', serif;
 
 }
@@ -49,7 +49,7 @@
 }
 
 h2 {
-  font-size: 45px;
+  font-size: 34px;
   font-family: 'Roboto Slab', serif;
   margin-top: 12px;
 }

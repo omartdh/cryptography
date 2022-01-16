@@ -44,6 +44,8 @@
 }
 .img-area img{
     width: 100%;
+    border: 1px solid #dbcecef5;
+    border-radius: 12px;
 }
 .carousel-indicators{
     left: 0;
